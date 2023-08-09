@@ -29,7 +29,6 @@ func NewLogger(p string) *Logger {
 }
 
 // create non-formated logs (metods)
-
 func (l *Logger) Debug(v ...interface{}) {
 	l.debug.Println(v...)
 }
@@ -44,7 +43,6 @@ func (l *Logger) Error(v ...interface{}) {
 }
 
 // create formated logs (metods)
-
 func (l *Logger) Debugf(format string, v ...interface{}) {
 	l.debug.Printf(format, v...)
 }
