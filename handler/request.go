@@ -14,12 +14,12 @@ type CreateOpeningRequest struct {
 }
 
 func errParamRequired(name, typ string) error {
-	return fmt.Errorf("Param: %s type %s is required", name, typ)
+	return fmt.Errorf("param: %s type %s is required", name, typ)
 }
 
 func (r *CreateOpeningRequest) Validade() error {
-	if r == nil {
-		return fmt.Errorf("malformed request body")
+	if r.Role == "" && r.Company == "" && r.Location == "" && r.Remote == nil && r.Salary == 0 && r.Link == "" {
+		return fmt.Errorf("request body is empty")
 	}
 	if r.Role == "" {
 		return errParamRequired("role", "string")
