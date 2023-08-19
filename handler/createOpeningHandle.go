@@ -7,7 +7,19 @@ import (
 )
 
 func CreateOpeningHandle(ctx *gin.Context) {
-	ctx.JSON(http.StatusOK, gin.H{
-		"msg": "GET opening",
-	})
+	request := CreateOpeningRequest{}
+
+	ctx.BindJSON(&request)
+
+	if err := request.Validade(); err != nil {
+		logger.Errorf("validade error: %v", err.Error())
+		sendError(ctx, http.StatusBadRequest, err.Error())
+		return
+	}
+
+	if err := db.Create(&request).Error; err != nil {
+		logger.Errorf("error creating opening %v", err.Error())
+		return
+	}
+
 }
