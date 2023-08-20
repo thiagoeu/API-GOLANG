@@ -1,4 +1,4 @@
-# Openings jobs API
+# Openings jobs API - GO
 
 $ to start the project :
 
@@ -10,6 +10,11 @@ $ This API works as a crud to openings vagacy jobs
    - Delete
    - Update
    - List
+
+$ USED IN THIS PROJECT
+   - GIN
+   - GORM
+   - SQLite
 
 
 
