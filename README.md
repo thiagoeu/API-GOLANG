@@ -1,4 +1,4 @@
-# GOstd — API de Vagas de Trabalho
+# API de Vagas de Trabalho
 
 ## Descrição
 
